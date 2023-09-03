@@ -1,5 +1,5 @@
 import { Text, View, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl } from "react-native";
-import { Stack, useRouter, useSearchParams } from "expo-router";
+import { Stack, useRouter, useGlobalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from "../../components";
 import { COLORS,icons,SIZES } from "../../constants";
@@ -82,7 +82,7 @@ const JobDetails = () => {
             {isLoading ? (
               <ActivityIndicator size="large" color={COLORS.primary} />
             ) : error ? (
-              <Text>Something went wrong</Text>
+              <Text>something went wrong</Text>
             ) : data.length === 0 ? (
               <Text>No data</Text>
             ) : (
